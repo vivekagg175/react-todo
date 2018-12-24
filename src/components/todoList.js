@@ -1,23 +1,21 @@
-import React, { Component } from "react";
-
-class TodoList extends Component {
-  state = {};
-
-  addItem = () => {
-    alert();
-  };
-  render() {
-    return (
-      <div className="todoListMain">
-        <div className="header">
-          <form onSubmit={this.addItem}>
-            <input placeholder="type text" />
-            <button type="submit">Add </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-}
+import React from "react";
+import ListItem from "./listItem";
+const TodoList = props => {
+  return (
+    <ul>
+      {props.todos.map((todo, index) => {
+        return (
+          <ListItem
+            key={index}
+            index={index}
+            todo={todo}
+            toggleDone={props.toggleDone}
+            removeTodo={props.removeTodo}
+          />
+        );
+      })}
+    </ul>
+  );
+};
 
 export default TodoList;
