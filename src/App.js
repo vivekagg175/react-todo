@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import TodoListWrapper from "./components/todoListWrapper";
 
 class App extends Component {
